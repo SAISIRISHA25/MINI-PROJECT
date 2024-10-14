@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Visits</title>
+</head>
+<body>
+    <h1>School Visits</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>User Name</th>
+                <th>Relation</th>
+                <th>Purpose</th>
+                <th>Student Name</th>
+                <th>Student Age</th>
+                <th>Contact</th>
+                <th>Booking Date</th>
+                <th>Response</th>
+            </tr>
+        </thead>
+        <tbody id="visitTable"></tbody>
+    </table>
+
+    <script>
+        fetch('http://localhost:3000/visits')
+            .then(response => response.json())
+            .then(data => {
+                const table = document.getElementById('visitTable');
+                data.forEach(visit => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${visit.id}</td>
+                        <td>${visit.user_name}</td>
+                        <td>${visit.relation}</td>
+                        <td>${visit.purpose}</td>
+                        <td>${visit.stu_name}</td>
+                        <td>${visit.stu_age}</td>
+                        <td>${visit.contact}</td>
+                        <td>${new Date(visit.visit_booking).toLocaleString()}</td>
+                        <td>${visit.response || 'N/A'}</td>
+                    `;
+                    table.appendChild(row);
+                });
+            })
+            .catch(error => console.error('Error fetching visits:', error));
+    </script>
+</body>
+</html>

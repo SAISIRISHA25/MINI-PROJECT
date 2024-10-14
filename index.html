@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SR Mavericks International School</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2; /* Light background for the body */
+            color: #4d908e; /* Muted teal for text */
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header Styles */
+        .school-header {
+            background-color: transparent; /* No background color */
+            padding: 20px;
+            display: flex;
+            align-items: center; /* Aligns items vertically center */
+            justify-content: flex-start; /* Aligns items to the left */
+        }
+
+        .school-logo {
+            width: 80px; /* Adjust logo size */
+            margin-right: 20px; /* Space between logo and name */
+        }
+
+        .school-name {
+            color: #f94144; /* Bright red for the school name */
+            font-size: 36px;
+            margin: 0; /* Remove default margin */
+        }
+
+        /* Hero Section Styles */
+        .hero {
+            position: relative;
+            height: 300px;
+            overflow: hidden;
+        }
+
+        .hero-background {
+            background-image: url('https://i.ibb.co/fpjjLS0/Screenshot-2024-09-29-184857.png');
+            background-size: cover;
+            background-position: center;
+            height: 100%;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-content {
+            position: relative;
+            color: #f9c74f; /* Bright accent color for quote text */
+            text-align: center;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .quote {
+            font-size: 24px;
+            margin: 0;
+            font-style: italic;
+        }
+
+        /* About Section */
+        .about {
+            background-color: #f9f9f9; /* Light background for about section */
+            padding: 60px;
+            text-align: center;
+        }
+
+        .about-image {
+            width: 500px; /* Set width for square image */
+            height: 400px; /* Set height for square image */
+            border-radius: 10px; /* Rounded corners */
+            margin-bottom: 20px;
+        }
+
+        .about-text h2 {
+            color: #f3722c; /* Orange for subheading */
+        }
+
+        /* Info Section Styles */
+        .info-section {
+            display: flex;
+            justify-content: space-around;
+            padding: 50px;
+            gap: 20px;
+        }
+
+        .info-card {
+            background-color: #fff; /* White background for cards */
+            border-radius: 15px;
+            padding: 20px;
+            width: 30%;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .info-card h2 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #277da1; /* Teal for card headings */
+        }
+
+        .info-card p {
+            font-size: 16px;
+            color: #555; /* Dark grey for text */
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .info-card a {
+            color: #f8961e; /* Earthy orange for links */
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .info-card a:hover {
+            text-decoration: underline;
+        }
+
+        /* Adjusting the icon size */
+        .info-card img {
+            width: 40px; /* Reduced size for icons */
+            margin-bottom: 15px;
+        }
+
+        /* Enquiry Section Styles */
+        .enquiry-section {
+            background-color: #90be6d; /* Soft green for enquiry section */
+            padding: 40px;
+            border-radius: 15px;
+            margin: 30px auto;
+            max-width: 800px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .enquiry-section h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #002147; /* Dark blue for headings */
+        }
+
+        .enquiry-container {
+            width: 100%;
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            border-radius: 8px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .form-group input:focus {
+            border-color: #43aa8b;
+        }
+
+        .error {
+            color: red;
+            font-size: 12px;
+            margin-top: 5px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 12px;
+            background-color: #f3722c;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .submit-btn:hover {
+            background-color: #f9844a;
+        }
+
+        .response-message {
+            margin-top: 20px;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        /* Footer Styles */
+        .footer {
+            background-color: #4d908e; /* Muted teal for footer */
+            color: white; /* White text for contrast */
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .footer-logo {
+            width: 80px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section with School Logo and Name -->
+    <header class="school-header">
+        <img src="https://i.ibb.co/445k82w/Screenshot-2024-09-29-185139.png" alt="School Logo" class="school-logo">
+        <h1 class="school-name">SR Mavericks International School</h1>
+    </header>
+
+    <!-- Hero Banner Section -->
+    <section class="hero" style="height: auto;">
+        <div class="hero-background" style="background-image: url('https://i.ibb.co/7b6RWJf/collage-photo.jpg'); background-size: contain; background-repeat: no-repeat; height: 1080px; width: 100%;">
+            <div class="overlay">
+                <div class="hero-content">
+                    <p class="quote" style="font-weight: bold; font-style: italic; color: #ffffff;">
+                        "The beautiful thing about learning is that no one can take it away from you."
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="about-content">
+            <img src="https://i.ibb.co/JFGYxGH/mam.jpg" alt="About Us Logo" class="about-image"> <!-- Updated Image -->
+            <div class="about-text">
+                <h2>About Us</h2>
+                <p>
+                    At SR Mavericks International School, we are dedicated to fostering the social, emotional, physical, and cognitive development of our children. Under the visionary leadership of Mrs. Dr. K. Sumathi, our founder, we create a nurturing environment that encourages learning as a natural part of life.
+                </p>
+                <p>
+                    Our classrooms and outdoor spaces are designed to provide rich literacy opportunities that promote creativity and exploration. We believe in cultivating a love for learning by making it enjoyable and engaging, allowing children to pursue knowledge in a playful manner.
+                </p>
+                <p>
+                    We strive to ensure a balanced approach to education, focusing equally on mental and physical development. Our holistic curriculum aims to empower every child, providing the skills and confidence they need to thrive in an ever-changing world.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Info Section: Faculty, Co-Curricular, Sports -->
+    <section class="info-section">
+        <div class="info-card faculty-card">
+            <i class="fas fa-user-tie fa-2x"></i> <!-- Faculty Icon -->
+            <h2>Qualified Faculty</h2>
+            <p>Our dedicated and qualified faculty members provide personalized attention to every child, ensuring optimal learning outcomes.</p>
+            
+        </div>
+        <div class="info-card co-curricular-card">
+            <i class="fas fa-futbol fa-2x"></i> <!-- Co-Curricular Icon -->
+            <h2>Co-Curricular Activities</h2>
+            <p>We offer a variety of co-curricular activities to promote creativity, teamwork, and personal development.</p>
+        </div>
+        <div class="info-card sports-card">
+            <i class="fas fa-volleyball-ball fa-2x"></i> <!-- Sports Icon -->
+            <h2>Sports Program</h2>
+            <p>Our sports program encourages physical fitness, teamwork, and discipline, contributing to the overall development of students.</p>
+        </div>
+    </section>
+
+    <!-- Branches Section -->
+    <section id="branches" class="branches">
+        <h2 style="text-align: center;">Our Branches</h2>
+        <ul>
+            <li>Branch 1: MAIN CAMPUS, No 45, Baktavachalam Avenue, Poonamallee, Chennai - 600056 (Near James Street Behind Blind School)
+
+            </li>
+            <li>Branch 2: MANGADU CAMPUS, Kirupananda Variar Nagar, Poonamallee, Chennai, Tamil Nadu 600056</li>
+        </ul>
+    </section>
+
+    <!-- Enquiry Section -->
+    <section id="enquiry" class="enquiry-section">
+        <h2>For Enquiry</h2>
+        <div class="enquiry-container">
+            <form id="enquiryForm">
+              
+                <div class="form-group">
+                    <label for="contact">Contact Number</label>
+                    <input type="text" id="contact" name="contact" required>
+                    <div class="error" id="contactError"></div>
+                </div>
+                <button type="submit" class="submit-btn">Submit</button>
+            </form>
+            <div class="response-message" id="responseMessage"></div>
+        </div>
+    </section>
+
+    
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <img src="https://i.ibb.co/445k82w/Screenshot-2024-09-29-185139.png" alt="School Logo" class="footer-logo">
+        <p>&copy; 2024 SR Mavericks International School. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Enquiry Form Submission Logic
+        const form = document.getElementById('enquiryForm');
+        const responseMessage = document.getElementById('responseMessage');
+
+        // Updated Enquiry Form Submission Logic
+form.addEventListener('submit', async (event) => {
+    event.preventDefault(); // Prevent form from submitting the traditional way
+
+    // Clear previous error messages
+    document.getElementById('contactError').textContent = '';
+
+    const contact = form.contact.value.trim();
+    let valid = true;
+
+    // Regular expression to validate numbers in the correct format (e.g., +12223334444)
+    const contactRegex = /^\+\d{10,14}$/;
+    if (!contactRegex.test(contact)) {
+        document.getElementById('contactError').textContent = 
+            'Please enter a valid contact number with country code (e.g., +12223334444).';
+        valid = false;
+    }
+
+    if (!valid) return; // Stop submission if validation fails
+
+    // If validation passes, display a message and send the call trigger request
+    responseMessage.textContent = 
+        'Your request is noted. We will call back soon! 📞 Please wait for the call patiently. Thank you!';
+    
+    try {
+        const response = await fetch('http://localhost:3000/enquiry', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ contactNumber: contact })
+        });
+
+        if (response.ok) {
+            responseMessage.textContent = 
+                '📞 Call triggered successfully! We will contact you shortly.';
+        } else {
+            responseMessage.textContent = 
+                'Failed to trigger the call. Please try again later.';
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        responseMessage.textContent = 
+            'Error in connecting to the server. Please try again later.';
+    }
+});
+
+    </script>
+</body>
+</html>
